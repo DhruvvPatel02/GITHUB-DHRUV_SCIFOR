@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+  </head>
+  <style>
+    form {
+      border: 2px solid black;
+      background-color: aqua;
+      max-width: 100%;
+    }
+  </style>
+  <body>
+    <form>
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" /><br />
+
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" />
+      <hr />
+
+      <p>Choose your favorite language:</p>
+      <input type="radio" id="language" name="language" value="CPP" />
+      <label for="CPP">CPP</label><br />
+
+      <input type="radio" id="language" name="language" value="Java" />
+      <label for="Java">Java</label><br />
+
+      <input type="radio" id="language" name="language" value="Python" />
+      <label for="Python">Python</label>
+      <hr />
+
+      <p>Choose your favorite Hobbies:</p>
+      <input type="checkbox" id="Hobbies" name="Hobbies" value="I like Movies"/>
+      <label for="Hobbies">I like Movies</label><br />
+
+      <input type="checkbox" id="Hobbies" name="Hobbies" value="I like Anime" />
+      <label for="Hobbies">I like Anime</label><br />
+
+      <input type="checkbox" id="Hobbies" name="Hobbies"value="I like Webseries"/>
+      <label for="Hobbies">I like Webseries</label>
+      <hr />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
