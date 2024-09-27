@@ -1,0 +1,75 @@
+<!-- CREATE AN HTML TABLE TO DISPLAY A LIST OF PRODUCTS.THE TABLE SHOULD INCLUDES COLMNS FOR PRODUCT NAME, PRICE AND QUANTITY.
+     ADD A FOOTER ROW TO THE TABLE THAT DISPLAYS THE TOTAL PRICE OF ALL PRODUCTS. (CALCULATE THE TOTAL MANUALLY) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List Table</title>
+    <style>
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 20px auto;
+        font-family: Arial;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      th {
+        background-color: darkblue;
+        color: white;
+      }
+
+      tfoot {
+        background-color: mediumseagreen;
+        font-weight: bold;
+      }
+
+      tfoot td {
+        border-top: 2px solid navy;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Rice</td>
+          <td>69.00</td>
+          <td>3 Kg</td>
+        </tr>
+        <tr>
+          <td>Wheat</td>
+          <td>49.00</td>
+          <td>3 Kg</td>
+        </tr>
+        <tr>
+          <td>Corn</td>
+          <td>19.00</td>
+          <td>2.5 Kg</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="2">Total Price</td>
+          <td>401.5</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
