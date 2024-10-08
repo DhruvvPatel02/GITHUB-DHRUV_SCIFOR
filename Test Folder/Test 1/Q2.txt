@@ -1,0 +1,9 @@
+2. WHAT IS HTML TAGS?
+ANS: HTML uses predefined tags and elements that tell the browser how to display
+the content. It's elements include an opening tag, some content, and a
+closing tag.
+There are two types of tags:
+1.Paired tags
+Syntax:<tag>content</tag>
+2.Unpaired tags
+Ex:<hr>,<br>
