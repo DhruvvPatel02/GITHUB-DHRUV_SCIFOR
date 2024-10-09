@@ -1,0 +1,12 @@
+6. What is the difference between HTML and XHTML?
+Ans: HTML (Hypertext Markup Language) and XHTML (Extensible Hypertext Markup Language) are both markup languages used to create web pages. While they share many similarities, there are some key differences between them.
+[1]Syntax
+HTML uses a more relaxed syntax, which means that it is more forgiving of errors and allows for some flexibility in how elements are written. XHTML, on the other hand, uses a stricter syntax that is more similar to XML (Extensible Markup Language). This means that XHTML is more precise and requires elements to be written in a specific way.
+[2]Validation
+XHTML is more easily validated using tools such as the W3C Validator, while HTML can be more difficult to validate due to its more relaxed syntax.
+[3]Compatibility
+HTML is more compatible with older browsers and devices, while XHTML is more compatible with XML-based technologies.
+[4]Attribute Values
+In HTML, attribute values do not need to be quoted, while in XHTML, attribute values must be quoted.
+[5]Error Handling
+HTML is more forgiving of errors and will often render a page even if there are errors in the code. XHTML, on the other hand, is more strict and will not render a page if there are errors in the code.

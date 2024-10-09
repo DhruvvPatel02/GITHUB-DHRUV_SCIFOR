@@ -1,0 +1,8 @@
+4. What are void elememts in HTML?
+Ans: In HTML, void elements also known as self-closing/empty elements, are elements that do not have a closing tag. They are typically used to add a single piece of information to a document, such as an image or a link.
+They do not have a closing tag.
+They cannot contain any content.
+Ex: <img>: used to add an image to a document
+    <br>: used to add a line break to a document
+    <hr>: used to add a horizontal rule to a document
+    <link>: used to add a link to an external stylesheet or script

@@ -1,0 +1,6 @@
+2. Are the HTML tags and elements the same thing?
+Ans: No, HTML tags and HTML elements are related, but they are not the same thing.
+
+Tags are the building blocks of an element.
+Elements are the combination of the tag(s) and the content, representing a part of the HTML document's structure.
+The tag is the name of the element, and the content is the information that the element contains.

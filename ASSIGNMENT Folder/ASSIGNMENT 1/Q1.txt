@@ -1,0 +1,5 @@
+1. What is HTML?
+Ans: HTML stands for Hypertext Markup Language. 
+It is the standard markup language used to create the structure and content of a web pages. it is a combination of Hypertext and Markup language. 
+Hypertext defines the link between web pages, Markup language is used to define the text document within the tag to define the structure of web pages. 
+HTML consists of various elements, that are responsible for telling search engines how to display page content. For example, headings, lists, images, links, and more.

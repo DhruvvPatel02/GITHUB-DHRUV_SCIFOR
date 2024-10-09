@@ -1,0 +1,13 @@
+5. What is the feature of HTML?
+Ans: It has several features that make it a powerful and flexible language for building websites and web applications. 
+Here are some of the key features of HTML:
+ [1]Platform Independence
+ [2]Easy to Learn
+ [3]Multimedia Support
+ [4]Structured Content
+ [5]Hyperlinking
+ [6]Semantic Meaning 
+ [7]Extensibility
+ [8]Accessibility
+ [9]Search Engine Optimization (SEO)
+ [10]Integration with Other Technologies

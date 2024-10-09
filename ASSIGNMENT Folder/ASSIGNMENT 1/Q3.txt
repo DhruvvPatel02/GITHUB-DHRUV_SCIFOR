@@ -1,0 +1,14 @@
+3. What are the tags and attributes in HTML?
+Ans: HTML tags are represented by a set of characters surrounded by angle brackets (<>) and usually come in pairs, with the opening tag preceding the content and the closing tag following the content.
+Ex: Headings: <h1> to <h6>
+    Paragraphs: <p>
+    Links: <a>
+    Images: <img>
+    Lists: <ul>, <ol>, <li>
+    Containers: <div>, <span>
+HTML attributes provide additional information about the elements. They are added to the opening tag of an element and consist of a name and a value.
+Ex: href: specifies the URL of a link
+    src: specifies the URL of an image
+    alt: specifies the alternative text for an image
+    title: specifies the title of a page or an element
+    style: specifies the CSS styles for an element
