@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Positive, Negative, or Zero</title>
+</head>
+<body>
+    
+    <script>
+        function checkNumber(num) {
+            if (num > 0) {
+                return "Positive number";
+            } else if (num < 0) {
+                return "Negative number";
+            } else if (num == 0) {
+                return "Zero";
+            } else {
+                return "Invalid input";
+            }
+        }
+
+        // Take input from user
+        var userInput = prompt("Enter a number:");
+        var num = Number(userInput);
+
+        // Check the number and display the result
+        alert(num + " is a " + checkNumber(num));
+    </script>
+
+</body>
+</html>
