@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break and Continue Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .example {
+            margin-bottom: 20px;
+        }
+        p {
+            background-color: wheat;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Example using break -->
+    <div class="example">
+        <h2>Example of Break Statement:</h2>
+        <p>
+            <script>
+                for (var i = 0; i < 10; i++) {
+                    if (i === 5) {
+                        break; // Exit the loop when i is 5
+                    }
+                    document.write(i + "<br>"); // This will print numbers 0 to 4 
+                }
+            </script>
+        </p>
+    </div>
+
+    <!-- Example using continue  -->
+    <div class="example">
+        <h2>Example of Continue Statement:</h2>
+        <p>
+            <script>
+                for (var j = 0; j < 10; j++) {
+                    if (j === 5) {
+                        continue; // Skip the rest of the loop when j is 5 and continue with the next iteration 
+                    }
+                    document.write(j + "<br>"); // This will print numbers 0 to 9 except 5 
+                }
+            </script>
+        </p>
+    </div>
+
+</body>
+</html>
