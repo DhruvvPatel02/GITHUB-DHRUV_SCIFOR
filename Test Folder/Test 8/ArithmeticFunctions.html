@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations using Functions</title>
+</head>
+<body>
+    
+    <script> 
+        function arithmeticOperations(num1, num2, operation) { 
+            switch (operation) { 
+                case 'add': 
+                    return num1 + num2; 
+                case 'subtract': 
+                    return num1 - num2; 
+                case 'multiply': 
+                    return num1 * num2; 
+                case 'divide': 
+                if (num2 !== 0) { 
+                    return num1 / num2; 
+                    } 
+                else { 
+                    return "Cannot divide by zero"; 
+                    } 
+                default: 
+                    return "Invalid operation"; 
+                } 
+            }
+                        
+        // Taking inputs from user 
+        var num1 = Number(prompt("Enter the first number:")); 
+        var num2 = Number(prompt("Enter the second number:")); 
+        var operation = prompt("Enter the operation (add, subtract, multiply, divide):"); 
+                        
+        // Performing the operation and displaying the result 
+        var result = arithmeticOperations(num1, num2, operation); 
+        alert("The result of " + operation + " is: " + result); 
+        </script> 
+                    
+</body>
+</html>
