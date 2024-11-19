@@ -11,7 +11,8 @@
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            height: 100vh; margin: 0; 
+            height: 100vh; 
+            margin: 0; 
         } 
         .calculator { 
             background-color: wheat; 
@@ -29,8 +30,8 @@
         } 
         button { 
             background-color: #007BFF; 
-            color: white; cursor: 
-            pointer; 
+            color: white; 
+            cursor: pointer; 
             border: none; 
         } 
         button:hover { 
@@ -38,7 +39,8 @@
         } 
         #result { 
             margin-top: 20px; 
-            font-weight: bold; }
+            font-weight: bold; 
+        }
     </style>
 </head>
 <body>
@@ -58,11 +60,12 @@
         <div id="result"></div> 
     </div>
 
-    <script> function calculate() { 
-        var num1 = Number(document.getElementById('num1').value); 
-        var num2 = Number(document.getElementById('num2').value); 
-        var operation = document.getElementById('operation').value; 
-        var result; 
+    <script> 
+        function calculate() { 
+            var num1 = Number(document.getElementById('num1').value); 
+            var num2 = Number(document.getElementById('num2').value); 
+            var operation = document.getElementById('operation').value; 
+            var result; 
         
         switch (operation) { 
             case 'add': 
