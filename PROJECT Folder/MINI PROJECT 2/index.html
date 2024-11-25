@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHRUV PATEL / Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./Style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Left Section: Image -->
+    <div class="left-section">
+      <img src="./images/IMG.jpg" alt="DHRUV PATEL" class="profile-pic">
+    </div>
+
+    <!-- Right Section: Content -->
+    <div class="right-section">
+      <!-- Header -->
+      <header>
+        <div class="logo">DHRUV PATEL</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <section id="about" class="p-4">
+        <h2>About Me!!!</h2>
+        <h1>Hello! I'm Dhruv Patel,</h1>
+        <p class="bio">
+        A Frontend and Full Stack Developer passionate about building visually appealing, user-friendly, and efficient web applications. 
+        I combine modern design principles with robust backend technologies to create scalable solutions that align with the latest industry trends. </p>
+        <p class="bio">Let’s build something great together!</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li data-skill="C++">C++</li>
+          <li data-skill="Python">Python</li>
+          <li data-skill="HTML">HTML</li>
+          <li data-skill="CSS">CSS</li>
+          <li data-skill="JavaScript">JavaScript</li>
+          <li data-skill="CSS">BootStrap</li>
+          <li data-skill="CSS">Taliwind CSS</li>
+          <li data-skill="CSS">React.js</li>
+          <li data-skill="Node.js">Node.js</li>
+          <li data-skill="Express.js">Express.js</li>
+          <li data-skill="MongoDB">MongoDB</li>
+          <li data-skill="CSS">PostgreSQL</li>
+          <li data-skill="CSS">Git/GitHub</li>
+          <li data-skill="MS Office">MS Office</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="./images/FoodorderIMG.png" alt="Spotify Website">
+            <h3>Food_Ordering_app</h3>
+            <p>An app for order Food online.</p>
+            <a href="https://github.com/DhruvvPatel02/Food_Ordering_app" target="_blank">GitHub</a>
+          </div>
+          <div class="project-card">
+            <img src="./images/ExpenseTrackerApp.png" alt="Covid">
+            <h3>Expense Tracker App
+            </h3>
+            <p>An app to manage and keep track of income and expenses.</p>
+            <a href="https://github.com/DhruvvPatel02/ExpenseTrackerApp" target="_blank">GitHub</a>
+          </div>
+          <div class="project-card">
+            <img src="./images/Chatapplication.png" alt="amzonclone">
+            <h3>Chat Application</h3>
+            <p>An application useful for chatting purpose.</p>
+            <a href="https://github.com/DhruvvPatel02/chatapplication" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter the subject" required>
+            <div class="invalid-feedback">Please enter a subject.</div>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Write your message here" required></textarea>
+            <div class="invalid-feedback">Please enter a message.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./Script.js"></script>
+</body>
+</html>
