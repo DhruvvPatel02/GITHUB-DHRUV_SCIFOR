@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .content {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+  </style>
+<body>
+    <div id="container">
+    <h1>AJAX Example</h1>
+    <div id="output">
+    <button type="button" onclick="loadDoc()">CLICK ME</button>
+    </div>
+    </div>
+
+    <script>
+    function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("output").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "about.html", true);
+    xhttp.send();
+    }
+    </script>
+
+</body>
+</html>
