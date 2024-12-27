@@ -18,7 +18,7 @@
 
     <div id="root"></div>
     <script type="text/babel">
-      class Changes extends React.Component {
+      class Info extends React.Component {
         constructor(props) {
           super(props);
           this.state = {
@@ -38,7 +38,7 @@
         render() {
           return (
             <div>
-                <p>Name: {this.state.Firstname}</p> 
+                <p>First Name: {this.state.Firstname}</p> 
                 <p>Last Name: {this.state.Lastname}</p> 
                 <p>Age: {this.state.Age}</p>
               
@@ -49,7 +49,7 @@
       }
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
-      root.render(<Changes />);
+      root.render(<Info />);
     </script>
   </body>
 </html>
