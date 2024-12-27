@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Component Example</title>
+  </head>
+  <body>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+      class Changes extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            Firstname: "Raj",
+            Lastname: "Mehta",
+            Age: 25,
+          };
+        }
+        Changes = () => {
+          this.setState({
+            Firstname: "Dhruv",
+            Lastname: "Patel",
+            Age: 22,
+          });
+        };
+
+        render() {
+          return (
+            <div>
+                <p>Name: {this.state.Firstname}</p> 
+                <p>Last Name: {this.state.Lastname}</p> 
+                <p>Age: {this.state.Age}</p>
+              
+              <button onClick={this.Changes}>Change Button</button>
+            </div>
+          );
+        }
+      }
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<Changes />);
+    </script>
+  </body>
+</html>
