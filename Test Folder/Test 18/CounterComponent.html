@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Component Example</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.18.13/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        // Import useState hook from React library
+        const { useState } = React;
+
+        // Define Counter component
+        function Counter() {
+            // Initialize count state with value 0
+            const [count, setCount] = useState(0);
+
+            // Function to increment the count 
+            const increment = () => { 
+                setCount(count + 1); 
+            }; 
+            
+            // Function to decrement the count 
+            const decrement = () => { 
+                setCount(count - 1); 
+            }; 
+            
+            return ( 
+                <div> 
+                    <h1>Counter: {count}</h1> 
+                    <button onClick={increment}>Increment</button> 
+                    <button onClick={decrement}>Decrement</button> 
+                    </div> 
+                ); 
+            }
+
+        // Create root element
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // Render Counter component
+        root.render(<Counter />);
+    </script>
+    
+</body>
+</html>
