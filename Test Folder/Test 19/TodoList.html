@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List with Context API</title>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+
+    #root {
+      text-align: center;
+      padding: 20px;
+      width: 350px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 70%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-left: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f1f1;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+    }
+
+    .delete-btn:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    const TaskContext = React.createContext();
+
+    function TaskProvider({ children }) {
+      const [tasks, setTasks] = React.useState([]);
+
+      const addTask = (task) => {
+        if (task.trim() !== "") {
+          setTasks([...tasks, task]);
+        }
+      };
+
+      const removeTask = (index) => {
+        setTasks(tasks.filter((_, i) => i !== index));
+      };
+
+      return (
+        <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
+          {children}
+        </TaskContext.Provider>
+      );
+    }
+
+    function TaskList() {
+      const { tasks, removeTask } = React.useContext(TaskContext);
+
+      return (
+        <ul>
+          {tasks.map((task, index) => (
+            <li key={index}>
+              {task} 
+              <button className="delete-btn" onClick={() => removeTask(index)}>❌</button>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+    function TaskInput() {
+      const { addTask } = React.useContext(TaskContext);
+      const [task, setTask] = React.useState("");
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        addTask(task);
+        setTask("");
+      };
+
+      return (
+        <form onSubmit={handleSubmit}>
+          <input 
+            type="text" 
+            placeholder="Enter task..." 
+            value={task} 
+            onChange={(e) => setTask(e.target.value)} 
+          />
+          <button type="submit">➕</button>
+        </form>
+      );
+    }
+
+    function App() {
+      return (
+        <TaskProvider>
+          <div id="root">
+            <h1>To-Do List 📝</h1>
+            <TaskInput />
+            <TaskList />
+          </div>
+        </TaskProvider>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+
+</body>
+</html>
