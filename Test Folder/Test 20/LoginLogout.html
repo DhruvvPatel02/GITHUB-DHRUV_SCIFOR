@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@18.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/redux@4.1.0/dist/redux.js"></script>
+    <script src="https://unpkg.com/@babel/standalone"></script>
+    <title>Login System using Redux</title>
+
+    <style>
+      body {
+        text-align: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        background: whitesmoke;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    input:focus {
+        border-color: #764ba2;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #28a745;
+        color: white;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background: #218838;
+        transform: scale(1.05);
+    }
+
+    .logout {
+        background: #dc3545;
+    }
+
+    .logout:hover {
+        background: #c82333;
+    }
+
+    p {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const initialState = {
+        isAuthenticated: false,
+        email: "",
+      };
+
+      const login = (email) => ({ type: "LOGIN", payload: email });
+      const logout = () => ({ type: "LOGOUT" });
+
+      const authReducer = (state = initialState, action) => {
+        switch (action.type) {
+          case "LOGIN":
+            return { ...state, isAuthenticated: true, email: action.payload };
+          case "LOGOUT":
+            return initialState;
+          default:
+            return state;
+        }
+      };
+
+      const store = Redux.createStore(authReducer);
+
+      const LoginForm = () => {
+        const [email, setEmail] = React.useState("");
+        const [password, setPassword] = React.useState("");
+        const [error, setError] = React.useState("");
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          if (!email || !password) {
+            setError("Please enter email and password!");
+            return;
+          }
+          store.dispatch(login(email));
+        };
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            <button type="submit">Login</button>
+          </form>
+        );
+      };
+
+      const Logout = ({ email }) => (
+        <div>
+          <h2>Welcome, {email}!</h2>
+          <button className="logout" onClick={() => store.dispatch(logout())}>
+            Logout
+          </button>
+        </div>
+      );
+
+      const App = () => {
+        const [state, setState] = React.useState(store.getState());
+
+        React.useEffect(() => {
+          const unsubscribe = store.subscribe(() => setState(store.getState()));
+          return unsubscribe;
+        }, []);
+
+        return (
+          <div className="container">
+            <h1>{state.isAuthenticated ? "Dashboard" : "Login"}</h1>
+            {state.isAuthenticated ? (
+              <Logout email={state.email} />
+            ) : (
+              <LoginForm />
+            )}
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
