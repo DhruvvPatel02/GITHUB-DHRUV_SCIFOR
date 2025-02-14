@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular ngBind Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController as vm">
+
+    <p ng-bind="vm.message"></p>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function($scope) {
+            var vm = this;
+            vm.message = "Hello, Angular Learner!";
+        });
+    </script>
+
+</body>
+</html>
